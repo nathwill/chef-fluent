@@ -1,4 +1,4 @@
-# fluent
+# fluent cookbook [![Build Status](https://travis-ci.org/nathwill/chef-fluent.svg?branch=master)](https://travis-ci.org/nathwill/chef-fluent)
 
 simple cookbook for managing td-agent{,-bit} (fluent{d,bit})
 
