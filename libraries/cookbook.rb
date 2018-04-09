@@ -37,7 +37,7 @@ module FluentCookbook
 
   class FluentdGemResource < Chef::Resource::Package::GemPackage
     resource_name :fluentd_gem
-    property :gem_binary, String, default: '/sbin/td-agent-gem'
+    property :gem_binary, String, default: '/usr/sbin/td-agent-gem'
   end
 
   class FluentdGemProvider < Chef::Provider::Package::Rubygems

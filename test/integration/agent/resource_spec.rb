@@ -23,3 +23,9 @@ control 'fluentd_cfg' do
     end
   end
 end
+
+control 'fluentd_gem' do
+  describe command('/usr/sbin/td-agent-gem list') do
+    its('stdout') { should match 'fluent-plugin-grep' }
+  end
+end
