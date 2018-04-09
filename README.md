@@ -23,10 +23,45 @@ simple cookbook for managing td-agent{,-bit} (fluent{d,bit})
 
 a light wrapper around the file resource that sets up a default install path of `/etc/td-agent/conf.d/#{name}.conf`
 
+
+example:
+
+```ruby
+fluentd_cfg 'input' do
+  content <<~EOT
+    <source>
+      @type debug_agent
+      @id input_debug_agent
+      bind 127.0.0.1
+      port 24230
+    </source>
+  EOT
+end
+```
+
 ### fluent\_bit\_cfg
 
 a light wrapper around the the file resource that sets up a default install path of `/etc/td-agent-bit/conf.d/#{name}.conf`
 
+```ruby
+fluent_bit_cfg 'input' do
+  content <<~EOT
+    [INPUT]
+        Name cpu
+        Tag my_cpu
+        Interval_Sec 300
+  EOT
+end
+```
+
 ### fluentd\_gem
 
 a light wrapper around the gem_package resource that sets the default gem_binary to `/usr/sbin/td-agent-gem`
+
+example:
+
+```ruby
+fluentd_gem 'fluent-plugin-grep' do
+  version '0.3.4'
+end
+```
