@@ -29,4 +29,4 @@ a light wrapper around the the file resource that sets up a default install path
 
 ### fluentd\_gem
 
-a light wrapper around the gem_package resource that sets the default gem_binary to `/sbin/td-agent-gem`
+a light wrapper around the gem_package resource that sets the default gem_binary to `/usr/sbin/td-agent-gem`
