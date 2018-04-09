@@ -35,6 +35,15 @@ module FluentCookbook
     provides :fluent_bit_cfg
   end
 
+  class FluentdGemResource < Chef::Resource::Package::GemPackage
+    resource_name :fluentd_gem
+    property :gem_binary, String, default: '/sbin/td-agent-gem'
+  end
+
+  class FluentdGemProvider < Chef::Provider::Package::Rubygems
+    provides :fluentd_gem
+  end
+
   module Helpers
     module_function
 

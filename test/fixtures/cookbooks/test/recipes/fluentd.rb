@@ -21,3 +21,5 @@ fluentd_cfg 'outputs' do
   EOT
   notifies :reload, 'service[td-agent]', :delayed
 end
+
+fluentd_gem 'fluent-plugin-grep'
